@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+
+    <title>CodePen - Personal Portfolio Page - freecodecamp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+	<link rel='stylesheet' href='personal-portfolio.css'>
+
+  </head>
+
+  <body>
+    <!-- I can access all of the portfolio content just by scrolling. I navigate to different sections of the webpage by clicking buttons in the navigation. -->
+    <nav class="navbar navbar-default" id="nav">
+      <a class="navbar-brand" href="#">
+        <!-- <img alt="mushroom here" /> -->
+        <img alt="mushroom" src="https://avatars2.githubusercontent.com/u/1529046?v=3&s=30" />
+      </a>
+
+      <p class="navbar-text">My Portfolio Page</p>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation"><a href="#info">Info</a></li>
+        <li role="presentation"><a href="#projects">Projects</a></li>
+        <li role="presentation"><a href="#contact">Contact Me</a></li>
+      </ul>
+    </nav>
+
+    <!-- I can click different buttons that will take me to the portfolio creator's different social media pages. -->
+    <main>
+	<div class="container-fluid">
+      <section class="row" id="info">
+        <p class="col-md-4 text-left lead">My name is Nick! I am a web developer and dev ops enginner, having worked on a number of business process and content management systems over the past 5 years for my current employer. I'm excited to expand my development portfolio and work in
+          new frameworks to learn new things and grow!</p>
+      </section>
+      <!-- ./row -->
+      <section class="row" id="projects">
+        <div class="row">
+          <!-- I can see thumbnail images of different projects the portfolio creator has built (if you haven't built any websites before, use placeholders.) -->
+          <p class="col-md-12 text-right lead">Here are some things I've worked on!</p>
+        </div>
+        <!-- ./row -->
+        <div class="row first-image-row">
+          <div class="col-md-4 text-center"><label><img class="img-thumbnail" src="http://i105.photobucket.com/albums/m213/Renagade242/f91132c9-ec73-4671-a4de-bfc70e3a008b_zpswys4ydjo.png"><BR/>Linus Torvalds Tribute Page</label></div>
+          <div class="col-md-4 text-center"><label><img class="img-thumbnail" src="http://i105.photobucket.com/albums/m213/Renagade242/5e61958b-e27b-4da1-93ee-78ef6daacee2_zpsmgyxarsq.png"><BR/>I didn't make CodeSchool</label></div>
+          <div class="col-md-4 text-center"><label><img class="img-thumbnail" src="http://i105.photobucket.com/albums/m213/Renagade242/c8da41f7-fd5b-42e5-a0d9-b66df8183be8_zpsvp3qyx8p.png"><BR/>I didn't make SCP</label></div>
+        </div>
+        <!-- ./row -->
+        <div class="row">
+          <div class="col-md-4 text-center"><label><img class="img-thumbnail" src="http://i105.photobucket.com/albums/m213/Renagade242/59ad069f-15f4-4983-8caa-460c8db611dc_zpsfoyeelsa.png"><BR/>I didn't make GitLab</label></div>
+          <div class="col-md-4 text-center"><label><img class="img-thumbnail" src="http://i105.photobucket.com/albums/m213/Renagade242/33fc2cde-463f-4dfe-8559-2acbcdf159f2_zpsruct4yef.png"><BR/>I didn't make reddit</label></div>
+          <div class="col-md-4 text-center"><label><img class="img-thumbnail" src="http://i105.photobucket.com/albums/m213/Renagade242/e55c5a59-6b49-481f-af5d-5bc8e5d9f3bd_zpsnxvjqzxg.png"><BR/>I didn't make freecodecamp</label></div>
+        </div>
+        <!-- ./row -->
+      </section>
+      <!-- ./row -->
+      <section class="row" id="contact">
+        <p class="col-md-12 lead">Here's how to get in touch!</p>
+        <!-- REMEMBER "_blank" targets for codepen!!! -->
+        <div class="button-group col-md-12" role="group">
+          <a href="https://github.com/quisling" target="_blank" class="btn btn-default btn-lg" id="git-btn"><i class="fa fa-github"> Github</i></a>
+          <a href="https://www.freecodecamp.com/quisling" target="_blank" class="btn btn-default btn-lg" id="fcc-btn"><i class="fa fa-fire"> FCC</i></a>
+          <a href="https://twitter.com/quisling" target="_blank" class="btn btn-default btn-lg" id="twit-btn"><i class="fa fa-twitter"> Twitter</i></a>
+      </section>
+      <!-- ./row -->
+    </div>
+    <!-- /.container-fluid -->
+    </main>
+    <footer class="row text-center" id="footer">
+      <div class="col-md-12">Created by <a href="https://www.freecodecamp.com/quisling" target="_blank">Nick Richards</a></div>
+    </footer>
+</body>
+
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+</html>

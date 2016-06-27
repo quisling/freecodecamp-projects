@@ -1,0 +1,61 @@
+main{
+  background-color: #999;
+}
+
+.navbar, footer{
+  background-color: #222;
+  border-color: #000;
+  margin-bottom: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navbar-brand img{
+  border-radius: 15px;
+}
+
+section {
+ padding: 40px;
+}
+
+section p.lead{
+  margin: 30px;
+}
+
+#info{
+  background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/dark_embroidery.png") repeat scroll 0% 0%;
+}
+
+#info p {
+  color: #aaa; /* AAAAAAAH! */
+}
+
+#projects{
+  background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/grey_wash_wall.png") repeat scroll 0% 0%;
+}
+
+#projects p, #projects label {
+  color: #EEE; /* EEEEEEEEE! */
+}
+
+#contact{
+  background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/swirl_pattern.png") repeat scroll 0% 0%;
+}
+
+first-image-row{
+  margin-bottom: 30px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer{
+  color: #eee;
+}
+
+footer a, footer a:visited, footer a:active{
+  color: #eee;
+  font-weight: bold;
+}
