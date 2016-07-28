@@ -1,0 +1,85 @@
+body {
+  background-color: #666;
+}
+#outer-body {
+  width: 300px;
+  height: 400px;
+  background: #EDEDED;
+  border: 2px solid #EDEDED;
+  color: #000;
+  border-radius: 28px;
+  margin: 50px auto;
+}
+
+#title{
+  text-align: center;
+  margin: 5px auto 5px auto;
+  padding-top: 1px;
+  font-family: "Andale Mono", "Monotype.com", monospace
+}
+
+#screen {
+  font-family: 'Questrial', sans-serif;
+  width: 220px;
+  height: 110px;
+  margin: 5px auto;
+  border-radius: 5px;
+}
+#screen-top{
+  width: 220px;
+  height: 100px;
+  font-height: 35px;
+  font-size: 50px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+#screen-bot{
+  width: 220px;
+  height: 10px;
+  font-height: 15px;
+  text-align: right;
+}
+#keys{
+  width: 228px;
+  height: 270px;
+  margin: 0 auto;
+}
+.btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  /*
+    Font Stuff
+  */
+  font-weight: bold;
+  font-size: 23px;
+  margin: 2px;
+  font-family: 'Questrial', sans-serif;
+  border-radius: 100%;
+}
+
+.btn-op{
+  background-color: #FFF;
+  font-size: 14px;
+}
+
+.grp-last-two-rows{
+  width: 228px;
+  margin: 0 auto;
+}
+
+.grp-non-equals{
+  width: 174px;
+  float: left;
+}
+
+.btn-tall {
+  height: 104px;
+  border-radius: 30%;
+}
+
+.btn-wide {
+  width: 108px;
+  border-radius: 30%;
+}
