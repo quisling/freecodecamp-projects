@@ -1,0 +1,39 @@
+html{
+  height: 100%;
+}
+
+body{
+  min-height: 100%;
+  background-color: #123;
+  color: #fff;
+}
+
+header h1{
+  background-color: #456;
+  color: #cornsilk;
+  padding: 15px;
+}
+
+content .row{
+  background-color: cornsilk;
+  color: #123;
+  padding: 20px 0 20px 20px;
+  margin-bottom: 4px;
+}
+
+content .row img{
+  height: 30px;
+  width: 30px;
+  border: solid #123 2px;
+  border-radius: 8px;
+}
+
+content .online{
+  background-color: #AFA;
+  color: #456;
+}
+
+content .deleted{
+  background-color: #eee;
+  color: #333;
+}
