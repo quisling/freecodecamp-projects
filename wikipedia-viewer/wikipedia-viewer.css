@@ -1,0 +1,50 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color: midnightblue;
+  color: #FFF;
+}
+
+.content {
+  padding-top: 60px;
+  text-align: center;
+}
+
+/*
+  search starts hidden and zoomsIn on click of the search-icon link
+*/
+#search{
+  display: none;
+  opacity: 0;
+  color: darkorange;
+}
+.search-box {
+  background-color: midnightblue;
+  color: #FFF;
+  border: 3px solid darkorange;
+  border-radius: 5px;
+  padding-top: 5px;
+}
+
+.fa-times-circle-o {
+  padding-left: 5px;
+}
+
+a:link, a:visited, a:hover{
+  color: #FFF;
+}
+
+.result-row {
+  background-color: #6699CC;
+  color: midnightblue;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 25px;
+}
+
+i {
+  color: darkorange;
+}

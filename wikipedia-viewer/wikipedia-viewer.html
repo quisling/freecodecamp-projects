@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>CodePen - Wikipedia Viewer - freeCodeCamp</title>
+
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
+	<link rel='stylesheet prefetch' href='wikipedia-viewer.css'>
+
+  </head>
+
+    <body class="container-fluid">
+  <div class="row">
+    <div class="md-col-12">
+      <h1 class="text-center">Wikipedia Searcher</h1>
+    </div>
+  </div>
+  <div class="row content">
+    <div class="md-col-12">
+      <div class="row random">
+        <p class="md-col-12"><a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Click here for a random article</a></p>
+      </div>
+      <div class="row icon">
+        <form id="search-form">
+          <p class="md-col-12">
+          <div id="search"><input type="text" class="search-box" name="search-box"></input><a href="#" class="cancel"><i class="fa fa-times-circle-o fa-2x"></i></a></div>
+            <a href="#" role="navigation" id="search-icon"><i class="fa fa-search fa-4x"></i>
+          <BR/>Click icon to search</a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <div class="row results">
+      <div class="md-col-12 results-col">
+      </div>
+    </div>
+  </div>
+    
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+	<script src='wikipedia-viewer.js'></script>
+
+  </body>
+</html>
+ 
