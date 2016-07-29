@@ -4,4 +4,12 @@ html{
 
 body{
   min-height: 100%;
+  color: white;
+  background-color: darkgrey;
+}
+
+.headline{
+	font-size: 42px;
+	font-weight: bold;
+	font-family: 'Petit Formal Script', cursive;
 }
