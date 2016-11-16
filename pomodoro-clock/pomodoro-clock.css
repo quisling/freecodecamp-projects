@@ -8,6 +8,11 @@ body{
   background-color: darkgrey;
 }
 
+button{
+  width: 35px;
+  color: black;
+}
+
 .headline{
 	font-size: 42px;
 	font-weight: bold;
