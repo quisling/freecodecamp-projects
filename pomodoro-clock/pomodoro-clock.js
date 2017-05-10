@@ -13,18 +13,17 @@ setLen = (currLen, dir) =>{
     if (currLen === 120){
       return 120;
     } else{
-      return currLen++;
+      return (currLen+1);
     } 
   } else if (dir === 0){
     if (currLen === 1){
       return 1;
     } else{
-      return currLen--;
+      return (currLen-1);
     }
   } else {
     return 0;
   }
-  
 },
   
 formatTime = (time) =>{
@@ -79,14 +78,50 @@ setVars = () =>{
   document.getElementById("sessionAmt").innerHTML = currSessionLen;
   document.getElementById("stateTitle").innerHTML = currMode;
   document.getElementById("timeTitle").innerHTML = formatTime(currTime);
+},
+
+decreaseBreak = () =>{
+  currBreakLen = setLen(currBreakLen, 0);
+  if (currMode == "Break"){
+    clearInterval(timerVar);
+    currTime = (60*currBreakLen);
+  }
+  setVars();
+},
+
+increaseBreak = () =>{
+  currBreakLen = setLen(currBreakLen, 1);
+  if (currMode == "Break"){
+    clearInterval(timerVar);
+    currTime = (60*currBreakLen);
+  }
+  setVars();
+},
+
+decreaseSession = () =>{
+  currSessionLen = setLen(currSessionLen, 0);
+  if (currMode == "Session"){
+    clearInterval(timerVar);
+    currTime = (60*currSessionLen);
+  }
+  setVars();
+},
+
+increaseSession = () =>{
+  currSessionLen = setLen(currSessionLen, 1);
+  if (currMode == "Session"){
+    clearInterval(timerVar);
+    currTime = (60*currSessionLen);
+  }
+  setVars();
 };
 
 
 $(document).ready(function() {
   setVars();
   $(" #timer ").on("click", changeTimer);
-  $(" #breakDec ").on("click", function(){ currBreakLen = setLen(currBreakLen, 0); }); // Decrement Break
-  $(" #breakInc ").on("click", function(){ currBreakLen = setLen(currBreakLen, 1); }); // Increment Break
-  $(" #sessionDec ").on("click", function(){ currSessionLen = setLen(currSessionLen, 0); }); // Decrement Session
-  $(" #sessionInc ").on("click", function(){ currSessionLen = setLen(currSessionLen, 1); }); // Increment Break
+  $(" #breakDec ").on("click", decreaseBreak); // Decrement Break
+  $(" #breakInc ").on("click", increaseBreak); // Increment Break
+  $(" #sessionDec ").on("click", decreaseSession); // Decrement Session
+  $(" #sessionInc ").on("click", increaseSession); // Increment Break
 });
