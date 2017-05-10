@@ -41,28 +41,33 @@ tick = () =>{
     currTime--;
     document.getElementById("timeTitle").innerHTML = formatTime(currTime);
   } else {
+    clearInterval(timerVar);
     switch(currMode){
-    // if we are in session, flip to break
-    case "Session":{
-      currMode = "Break";
-      currTime = (60*currBreakLen);
+      // if we are in session, flip to break
+      case "Session":{
+        currMode = "Break";
+        currTime = (60*currBreakLen);
+        // Let's also display some change to the user that indicates we are in "break-mode"
+        document.body.style.background = "green";
+      }
+      break;
+      // if we are in break, flip to session
+      case "Break":{
+        currMode = "Session";
+        currTime = (60*currSessionLen);
+        document.body.style.background = "darkgrey";
+      }
+      break;
     }
-    break;
-    // if we are in break, flip to session
-    case "Break":{
-      currMode = "Session";
-      currTime = (60*currSessionLen);
-    }
-    break;
-  }
-  clearInterval(timerVar);
+    timerVar = setInterval(tick, 1000);
+    setVars();
   }
 },
   
 changeTimer = () =>{
   if (currState === "pause"){
     currState = "run";
-    timerVar = setInterval(tick, currTime);
+    timerVar = setInterval(tick, 1000);
   } else if (currState === "run"){
     currState = "pause";
     clearInterval(timerVar);
@@ -79,5 +84,9 @@ setVars = () =>{
 
 $(document).ready(function() {
   setVars();
-  $(" #timer ").on("click", changeTimer); 
+  $(" #timer ").on("click", changeTimer);
+  $(" #breakDec ").on("click", function(){ currBreakLen = setLen(currBreakLen, 0); }); // Decrement Break
+  $(" #breakInc ").on("click", function(){ currBreakLen = setLen(currBreakLen, 1); }); // Increment Break
+  $(" #sessionDec ").on("click", function(){ currSessionLen = setLen(currSessionLen, 0); }); // Decrement Session
+  $(" #sessionInc ").on("click", function(){ currSessionLen = setLen(currSessionLen, 1); }); // Increment Break
 });
