@@ -114,6 +114,12 @@ increaseSession = () =>{
     currTime = (60*currSessionLen);
   }
   setVars();
+},
+    
+resetTimer = () =>{
+  clearInterval(timerVar);
+  currTime = (60*currSessionLen);
+  setVars();
 };
 
 
@@ -124,4 +130,5 @@ $(document).ready(function() {
   $(" #breakInc ").on("click", increaseBreak); // Increment Break
   $(" #sessionDec ").on("click", decreaseSession); // Decrement Session
   $(" #sessionInc ").on("click", increaseSession); // Increment Break
+  $(" #reset ").on("click", resetTimer); // Increment Break
 });
