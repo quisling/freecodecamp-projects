@@ -1,29 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+
+	<title>CodePen - Pomodoro Clock - freeCodeCamp</title>
+
+	<link rel='stylesheet prefetch' href='../include/bootstrap.min.css'>
+	<link rel='stylesheet prefetch' href='pomodoro-clock.css'>
+	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Petit+Formal+Script'>
+	
+</head>
+
 <body class="container-fluid">
-		<div class="row">
-			<div class="col-md-12 text-center headline">Pomodoro Clock</div>
-		</div>
-		<div class="row" id="alter-box">
-			<div class="text-center col-md-6" id="break">
-				Break Length<BR/>
-        		<div class="text-center"><span id="breakDec">-</span> <span id="breakAmt"></span> <span id="breakInc">+</span></div>
-			</div>
-			<div class="text-center col-md-6" id="session">
-				Session Length<BR/>
-				<div class="text-center"><span id="sessionDec">-</span> <span id="sessionAmt"></span> <span id="sessionInc">+</span></div>
-			</div>
-		</div>
-		<BR/><BR/>
-		<div class="row">
-			<div class="text-center col-md-12">
-        <div id="timer">
-          <span id="stateTitle"></span>:<br/>
-          <span id="timeTitle"></span>
-        </div>
+	<div class="row head">
+		<div class="col-md-12 text-center headline">Pomodoro Clock</div>
+	</div>
+	<div class="row alter">
+		<div class="text-center col-md-6" id="break">
+			<span class="length-header">Break Length</span><BR/>
+			<div class="text-center">
+				<span class="butLen minus" id="breakDec">-</span>
+				<span class="numLen" id="breakAmt"></span>
+				<span class="butLen plus" id="breakInc">+</span>
 			</div>
 		</div>
-		<div class="row">
-			<div class="text-center col-md-12">
-        <div id="reset">RESET</div>
+		<div class="text-center col-md-6" id="session">
+			<span class="length-header">Session Length</span><BR/>
+		<div class="text-center">
+				<span class="butLen minus" id="sessionDec">-</span>
+				<span class="numLen" id="sessionAmt"></span>
+				<span  class="butLen plus" id="sessionInc">+</span>
 			</div>
 		</div>
-	</body>
+	</div>
+	<BR/><BR/>
+	<div class="row timer">
+		<div class="text-center col-md-12" id="timer">
+			<span id="stateTitle"></span>:<br/>
+			<span id="timeTitle"></span>
+		</div>
+	</div>
+	<div class="row reset">
+		<div class="text-center col-md-12">
+			<div id="reset"><span class="reset-box">RESET</span></div>
+		</div>
+	</div>
+</body>
+
+	<script src='../include/jquery-2.2.4.min.js'></script>
+	<script src='pomodoro-clock.js'></script>
+</html>

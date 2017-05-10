@@ -1,20 +1,48 @@
 html{
-  height: 100%;
+	height: 100%;
 }
 
 body{
-  min-height: 100%;
-  color: white;
-  background-color: darkgrey;
+	min-height: 100%;
+	color: white;
+	background-color: darkgrey;
 }
 
 button{
-  width: 35px;
-  color: black;
+	width: 35px;
+	color: black;
 }
 
 .headline{
 	font-size: 42px;
 	font-weight: bold;
 	font-family: 'Petit Formal Script', cursive;
+}
+
+.head, .timer{
+	margin-bottom: 40px;
+}
+
+.length-header, .reset{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.butLen, .numLen{
+	font-size: 19px;
+}
+
+.timer{
+	font-size: 27px;
+}
+
+.reset-box{
+	padding: 5px;
+	outline: #FFFFFF solid thick;
+}
+
+.butLen{
+	padding: 0px 4px 0px 4px;
+	margin: 0px 8px;
+	outline: #FFFFFF solid;
 }
