@@ -2,7 +2,7 @@ html{
   height: 100%;
 }
 
-body, content .spacer{
+body, content .spacer, footer{
   min-height: 100%;
   background-color: #123;
   color: #fff;
@@ -15,12 +15,17 @@ header h1{
   margin-bottom: 45px;
 }
 
+footer{
+   margin-top: 15px;
+   font-size: 20px;
+   font-weight: bold;
+}
+
 content .row{
   background-color: cornsilk;
   color: #123;
   font-size: 26px;
   font-weight: bold;
-  /*height: 100px;*/
 }
 
 .top-cell{

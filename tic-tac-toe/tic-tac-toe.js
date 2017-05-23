@@ -3,7 +3,7 @@
 var isPlayerO = Math.floor(Math.random()*2),
     aiChar,
     playerChar,
-    playerGoesFirst = 0, //Math.floor(Math.random()*2),
+    playerGoesFirst = Math.floor(Math.random()*2),
     playArea = [['&nbsp;','&nbsp;','&nbsp;'],['&nbsp;','&nbsp;','&nbsp;'],['&nbsp;','&nbsp;','&nbsp;']],
     nextSquare = [0,0],
     winner = false,
@@ -153,19 +153,32 @@ getInput = (item) =>{
    let getPos = item.currentTarget.id.substring(5),
        getY = getPos.substring(0,1),
        getX = getPos.substring(1);
-   if (isFull(getY, getX)){
-      alert("This square is already full!");
-      return false;
-   }
-   // Otherwise, mark that square as filled by playerchar, check end, run ai turn
-   setSquare(getY, getX, playerChar);
    if (!winner){
-      aiTurn();
-   };
+      if (isFull(getY, getX)){
+         alert("This square is already full!");
+         return false;
+      }
+      // Otherwise, mark that square as filled by playerchar, check end, run ai turn
+      setSquare(getY, getX, playerChar);
+      if (!winner){
+         aiTurn();
+      };
+   }
+},
+
+resetBoard = () =>{
+   isPlayerO = Math.floor(Math.random()*2);
+   playerGoesFirst = Math.floor(Math.random()*2);
+   playArea = [['&nbsp;','&nbsp;','&nbsp;'],['&nbsp;','&nbsp;','&nbsp;'],['&nbsp;','&nbsp;','&nbsp;']];
+   nextSquare = [0,0];
+   winner = false;
+   drawBoard();
+   initAI();
 };
 
 $(document).ready(function() {
    $(" div[id^=space] ").on("click", this.id ,getInput);
+   $(" div[id=reset] ").on("click", resetBoard);
 	drawBoard();
    initAI();
 });
