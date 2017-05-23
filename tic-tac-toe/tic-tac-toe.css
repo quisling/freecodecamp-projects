@@ -23,10 +23,6 @@ content .row{
   /*height: 100px;*/
 }
 
-div.col-md-2 > div{
-   color: red;
-}
-
 .top-cell{
    padding-top: 20px;
 }
