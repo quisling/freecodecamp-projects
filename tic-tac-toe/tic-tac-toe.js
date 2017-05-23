@@ -122,14 +122,14 @@ setSquare = (yComp, xComp, toSet) =>{
    playArea[yComp][xComp] = toSet;
    drawBoard();
    gameOver = checkEnd();
-   if (gameOver){
-      resetBoard();
-   }
 },
 
 aiTurn = () =>{
    setNextSquareRandom();
    setSquare(nextSquare[0], nextSquare[1], aiChar);
+   if (gameOver){
+      resetBoard();
+   }
 },
 
 isFull = (yVal, xVal) =>{
@@ -137,7 +137,6 @@ isFull = (yVal, xVal) =>{
    if ((testVal != 'O') && (testVal != 'X')) {
       return false;
    }
-
    return true;
 },
     
@@ -177,7 +176,9 @@ getInput = (item) =>{
       setSquare(getY, getX, playerChar);
       if (!gameOver){
          aiTurn();
-      };
+      } else {
+         resetBoard();
+      }
    }
 },
 
@@ -204,6 +205,6 @@ $(document).ready(function() {
    $(" div[id^=space] ").on("click", this.id, getInput);
    $(" div[id^=play] ").on("click", this.id, setChar);
    $(" div[id=reset] ").on("click", resetBoard);
-	drawBoard();
+  drawBoard();
    initAI();
 });
