@@ -95,16 +95,19 @@ checkEnd = () =>{
    if (checkWin(1)){
       winner = true;
       alert("Player Wins!");
+      return true;
    } else if (checkWin(0)){
       winner = true;
       alert("AI Wins!");
+      return true;
    } else{
       winner = false;
+      return false;
    }
 },
 
-setSquare = (xComp, yComp, toSet) =>{
-   playArea[xComp][yComp] = toSet;
+setSquare = (yComp, xComp, toSet) =>{
+   playArea[yComp][xComp] = toSet;
    drawBoard();
    checkEnd();
 },
@@ -114,10 +117,15 @@ aiTurn = () =>{
    setSquare(nextSquare[0], nextSquare[1], aiChar);
 },
 
-playTurn = (event) =>{
-   alert(event);
-},
+isFull = (yVal, xVal) =>{
+   let testVal = playArea[yVal][xVal];
+   if ((testVal != 'O') && (testVal != 'X')) {
+      return false;
+   }
 
+   return true;
+},
+    
 setNextSquareRandom = () =>{
    let full = true,
        getRand = () =>{
@@ -128,10 +136,7 @@ setNextSquareRandom = () =>{
       for (let i=0; i<2; i++){
          nextSquare[i] = getRand();
       };
-      let testVal = playArea[nextSquare[0]][nextSquare[1]];
-      if ((testVal != 'O') && (testVal != 'X')) {
-          full = false;
-      };
+      full = isFull(nextSquare[0], nextSquare[1]);
    };
 },
 
@@ -143,16 +148,24 @@ drawBoard = () =>{
    }
 },
 
-getInput = () =>{
+getInput = (item) =>{
    // Do input
-   aiTurn();
+   let getPos = item.currentTarget.id.substring(5),
+       getY = getPos.substring(0,1),
+       getX = getPos.substring(1);
+   if (isFull(getY, getX)){
+      alert("This square is already full!");
+      return false;
+   }
+   // Otherwise, mark that square as filled by playerchar, check end, run ai turn
+   setSquare(getY, getX, playerChar);
+   if (!winner){
+      aiTurn();
+   };
 };
 
 $(document).ready(function() {
-   //$(" div[id^=space] ").on("click", playTurn());
+   $(" div[id^=space] ").on("click", this.id ,getInput);
 	drawBoard();
    initAI();
-   //while (!winner){
-      getInput();
-   //};
 });
