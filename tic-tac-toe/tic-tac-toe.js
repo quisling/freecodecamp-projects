@@ -122,6 +122,9 @@ setSquare = (yComp, xComp, toSet) =>{
    playArea[yComp][xComp] = toSet;
    drawBoard();
    gameOver = checkEnd();
+   if (gameOver){
+      resetBoard();
+   }
 },
 
 aiTurn = () =>{
@@ -179,17 +182,27 @@ getInput = (item) =>{
 },
 
 resetBoard = () =>{
-   isPlayerO = Math.floor(Math.random()*2);
    playerGoesFirst = Math.floor(Math.random()*2);
    playArea = [['&nbsp;','&nbsp;','&nbsp;'],['&nbsp;','&nbsp;','&nbsp;'],['&nbsp;','&nbsp;','&nbsp;']];
    nextSquare = [0,0];
    gameOver = false;
    drawBoard();
    initAI();
+},
+    
+setChar = (item) =>{
+   let getChar = item.currentTarget.id.substring(4);
+   if (getChar === 'O'){
+    isPlayerO = 1;
+   } else {
+    isPlayerO = 0;
+   }
+   resetBoard();
 };
 
 $(document).ready(function() {
-   $(" div[id^=space] ").on("click", this.id ,getInput);
+   $(" div[id^=space] ").on("click", this.id, getInput);
+   $(" div[id^=play] ").on("click", this.id, setChar);
    $(" div[id=reset] ").on("click", resetBoard);
 	drawBoard();
    initAI();
