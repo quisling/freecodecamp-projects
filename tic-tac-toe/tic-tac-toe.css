@@ -2,7 +2,7 @@ html{
   height: 100%;
 }
 
-body{
+body, content .spacer{
   min-height: 100%;
   background-color: #123;
   color: #fff;
@@ -12,6 +12,7 @@ header h1{
   background-color: #456;
   color: #cornsilk;
   padding: 15px;
+  margin-bottom: 45px;
 }
 
 content .row{
@@ -19,8 +20,39 @@ content .row{
   color: #123;
   font-size: 26px;
   font-weight: bold;
-  padding: 20px;
-  /*margin-bottom: 4px;*/
+  /*height: 100px;*/
+}
+
+div.col-md-2 > div{
+   color: red;
+}
+
+.top-cell{
+   padding-top: 20px;
+}
+
+.left-cell{
+   padding-right: 0px;
+}
+
+.center-cell{
+   padding-left: 0px;
+   padding-right: 0px;
+}
+
+.right-cell{
+   padding-left: 0px;
+}
+
+.bottom-cell{
+   padding-bottom: 20px;
+}
+
+div[id^="space"]{
+   width: 100%;
+   height: 100%;
+   padding: 40px 0px;
+   min-height: 65px;
 }
 
 div[id^="space0"]{

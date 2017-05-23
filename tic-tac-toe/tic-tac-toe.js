@@ -4,7 +4,7 @@ var isPlayerO = Math.floor(Math.random()*2),
     aiChar,
     playerChar,
     playerGoesFirst = 0, //Math.round(Math.random()),
-    playArea = [['','',''],['','',''],['','','']],
+    playArea = [['&nbsp;','&nbsp;','&nbsp;'],['&nbsp;','&nbsp;','&nbsp;'],['&nbsp;','&nbsp;','&nbsp;']],
     nextSquare = [0,0],
     winner = false,
 
@@ -17,12 +17,12 @@ initAI = () =>{
      playerChar = 'X';
   };
 
-  // Temp Board Setup
+  /* Temp Board Setup
   for (let i=0; i<3; i++){
     for (let j=0; j<3; j++){
        playArea[i][j] = playerChar;
     }
-  } 
+  } */
 
   if (!playerGoesFirst){
       aiTurn();
