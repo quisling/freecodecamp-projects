@@ -6,7 +6,7 @@ var isPlayerO = Math.floor(Math.random()*2),
     playerGoesFirst = Math.floor(Math.random()*2),
     playArea = [['&nbsp;','&nbsp;','&nbsp;'],['&nbsp;','&nbsp;','&nbsp;'],['&nbsp;','&nbsp;','&nbsp;']],
     nextSquare = [0,0],
-    winner = false,
+    gameOver = false,
 
 initAI = () =>{
    if (isPlayerO){
@@ -90,26 +90,38 @@ checkWin = (player) =>{
    }
    return false;
 },
+
+checkDraw = () =>{
+   let isDraw = true;
+   for (let i=0; i<3; i++){
+      for (let j=0; j<3; j++){
+        if (!(isFull(j, i))){
+           return false;
+        }
+     }
+  }
+   return true;
+},
     
 checkEnd = () =>{
    if (checkWin(1)){
-      winner = true;
       alert("Player Wins!");
       return true;
    } else if (checkWin(0)){
-      winner = true;
       alert("AI Wins!");
       return true;
-   } else{
-      winner = false;
-      return false;
+   } else if (checkDraw()){
+      alert("It's a Draw!")
+      return true;
    }
+
+   return false;
 },
 
 setSquare = (yComp, xComp, toSet) =>{
    playArea[yComp][xComp] = toSet;
    drawBoard();
-   checkEnd();
+   gameOver = checkEnd();
 },
 
 aiTurn = () =>{
@@ -131,7 +143,7 @@ setNextSquareRandom = () =>{
        getRand = () =>{
          return Math.floor(Math.random()*3);
    };
-   
+
    while (full){
       for (let i=0; i<2; i++){
          nextSquare[i] = getRand();
@@ -153,14 +165,14 @@ getInput = (item) =>{
    let getPos = item.currentTarget.id.substring(5),
        getY = getPos.substring(0,1),
        getX = getPos.substring(1);
-   if (!winner){
+   if (!gameOver){
       if (isFull(getY, getX)){
          alert("This square is already full!");
          return false;
       }
       // Otherwise, mark that square as filled by playerchar, check end, run ai turn
       setSquare(getY, getX, playerChar);
-      if (!winner){
+      if (!gameOver){
          aiTurn();
       };
    }
@@ -171,7 +183,7 @@ resetBoard = () =>{
    playerGoesFirst = Math.floor(Math.random()*2);
    playArea = [['&nbsp;','&nbsp;','&nbsp;'],['&nbsp;','&nbsp;','&nbsp;'],['&nbsp;','&nbsp;','&nbsp;']];
    nextSquare = [0,0];
-   winner = false;
+   gameOver = false;
    drawBoard();
    initAI();
 };
